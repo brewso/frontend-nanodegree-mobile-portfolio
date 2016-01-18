@@ -1,4 +1,20 @@
 ## Website Performance Optimization portfolio project
+Open the index.html in your favorite web browser and navigate.
+or open https://brewso.github.io/frontend-nanodegree-mobile-portfolio
+To inspect the site on your phone, you can run a local server
+ 
+   ```bash
+   $> cd /path/to/your-project-folder
+   $> python -m SimpleHTTPServer 8080
+   ```
+ 
+ Open a browser and visit localhost:8080
+ Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
+ 
+   ``` bash
+   $> cd /path/to/your-project-folder
+   $> ngrok http 8080
+   ```
 
 ####Part 1: Optimize PageSpeed Insights score for index.html
 
