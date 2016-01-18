@@ -407,6 +407,7 @@ var resizePizzas = function(size) {
   // put together the two switch case statements to reduce file size and optomize performance since they both triggered on the same input
   // I took the random var outside of the for loop so it would only need to be defined once
   var randomPizzas = document.getElementsByClassName('randomPizzaContainer');
+  
   function changeSliderLabel(size) {
     switch(size) {
       case "1":
@@ -444,8 +445,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
+var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -523,11 +524,12 @@ window.addEventListener('scroll', updatePositions);
 
 
 
-// Maxed out the 'img' count at 20 because that is the most that shows on the layer view in DevTools.
+// used height to determine how many rows of pizzas are needed then multiplied that by cols to produce max pizzas
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
   var s = 256;
-  for (var i = 0; i < 20; i++) {
+  var rows = Math.ceil(window.screen.height / s);
+  for (var i = 0; i < rows*cols; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
     elem.src = "images/pizza.png";
